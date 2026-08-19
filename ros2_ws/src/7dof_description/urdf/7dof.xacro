@@ -1,0 +1,230 @@
+<?xml version="1.0" ?>
+<robot name="7dof" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find 7dof_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find 7dof_description)/urdf/7dof.trans" />
+<xacro:include filename="$(find 7dof_description)/urdf/7dof.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-1.9615822388533525e-17 8.827120074840085e-17 0.009002899250958178" rpy="0 0 0"/>
+    <mass value="0.01956038700343977"/>
+    <inertia ixx="2.9e-05" iyy="4e-06" izz="3.3e-05" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find 7dof_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find 7dof_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="arm_1_1">
+  <inertial>
+    <origin xyz="0.02971251800470596 5.924914869048442e-17 0.0414323495110301" rpy="0 0 0"/>
+    <mass value="0.09066295805207186"/>
+    <inertia ixx="0.00017" iyy="0.000152" izz="0.000164" ixy="0.0" iyz="0.0" ixz="-6.4e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0 -0.0 -0.012" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find 7dof_description)/meshes/arm_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0 -0.0 -0.012" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find 7dof_description)/meshes/arm_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="arm_3_1">
+  <inertial>
+    <origin xyz="0.05959283088497133 4.347405463805868e-05 0.04172707292226541" rpy="0 0 0"/>
+    <mass value="0.12086262440631358"/>
+    <inertia ixx="9.5e-05" iyy="0.000241" izz="0.000173" ixy="-0.0" iyz="-0.0" ixz="-0.000107"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.105545 -0.000112 -0.110506" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find 7dof_description)/meshes/arm_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.105545 -0.000112 -0.110506" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find 7dof_description)/meshes/arm_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="arm_4_1">
+  <inertial>
+    <origin xyz="-0.00031065124913117956 0.02232540295040704 0.0009929441828203378" rpy="0 0 0"/>
+    <mass value="0.04754958307980198"/>
+    <inertia ixx="1.2e-05" iyy="1.2e-05" izz="1e-05" ixy="0.0" iyz="-0.0" ixz="3e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.027218 0.024888 -0.203467" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find 7dof_description)/meshes/arm_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.027218 0.024888 -0.203467" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find 7dof_description)/meshes/arm_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="arm_5_1">
+  <inertial>
+    <origin xyz="0.00956723756236743 4.879877418544239e-07 0.006536735298877272" rpy="0 0 0"/>
+    <mass value="0.007583002778034214"/>
+    <inertia ixx="2e-06" iyy="1e-06" izz="2e-06" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.045485 0.002388 -0.217479" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find 7dof_description)/meshes/arm_5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.045485 0.002388 -0.217479" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find 7dof_description)/meshes/arm_5_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="arm_7_1">
+  <inertial>
+    <origin xyz="0.010202770809547769 -0.0009394516584164212 -0.004493000835550015" rpy="0 0 0"/>
+    <mass value="0.003466288836036091"/>
+    <inertia ixx="0.0" iyy="1e-06" izz="0.0" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.052446 0.011538 -0.234561" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find 7dof_description)/meshes/arm_7_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.052446 0.011538 -0.234561" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find 7dof_description)/meshes/arm_7_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="arm_6_1">
+  <inertial>
+    <origin xyz="0.010207004599050724 0.0005801178482570417 -0.00449297171362914" rpy="0 0 0"/>
+    <mass value="0.00346329575383349"/>
+    <inertia ixx="0.0" iyy="1e-06" izz="0.0" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.052446 -0.006762 -0.234561" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find 7dof_description)/meshes/arm_6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.052446 -0.006762 -0.234561" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find 7dof_description)/meshes/arm_6_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="arm_2_1">
+  <inertial>
+    <origin xyz="-0.0766672536979728 -0.031996855183144685 0.006477186695577314" rpy="0 0 0"/>
+    <mass value="0.1523954313332151"/>
+    <inertia ixx="0.000119" iyy="0.00047" izz="0.000555" ixy="0.0" iyz="-0.0" ixz="1.5e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.067151 -0.032 -0.095527" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find 7dof_description)/meshes/arm_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.067151 -0.032 -0.095527" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find 7dof_description)/meshes/arm_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Revolute 9" type="continuous">
+  <origin xyz="0.0 0.0 0.012" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="arm_1_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+</joint>
+
+<joint name="Revolute 12" type="revolute">
+  <origin xyz="-0.172696 -0.031888 0.014979" rpy="0 0 0"/>
+  <parent link="arm_2_1"/>
+  <child link="arm_3_1"/>
+  <axis xyz="0.819152 0.0 0.573576"/>
+  <limit upper="3.141593" lower="0.0" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Revolute 13" type="revolute">
+  <origin xyz="0.132763 -0.025 0.092961" rpy="0 0 0"/>
+  <parent link="arm_3_1"/>
+  <child link="arm_4_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+  <limit upper="1.570796" lower="-1.570796" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Revolute 14" type="revolute">
+  <origin xyz="0.018267 0.0225 0.014012" rpy="0 0 0"/>
+  <parent link="arm_4_1"/>
+  <child link="arm_5_1"/>
+  <axis xyz="0.819152 0.0 0.573576"/>
+  <limit upper="1.570796" lower="-1.570796" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Revolute 15" type="revolute">
+  <origin xyz="0.006961 -0.00915 0.017082" rpy="0 0 0"/>
+  <parent link="arm_5_1"/>
+  <child link="arm_7_1"/>
+  <axis xyz="0.573576 0.0 -0.819152"/>
+  <limit upper="1.570796" lower="-0.261799" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Revolute 16" type="revolute">
+  <origin xyz="0.006961 0.00915 0.017082" rpy="0 0 0"/>
+  <parent link="arm_5_1"/>
+  <child link="arm_6_1"/>
+  <axis xyz="0.573576 0.0 -0.819152"/>
+  <limit upper="0.261799" lower="-1.570796" effort="100" velocity="100"/>
+</joint>
+
+<joint name="Revolute 17" type="revolute">
+  <origin xyz="0.067151 0.032 0.083527" rpy="0 0 0"/>
+  <parent link="arm_1_1"/>
+  <child link="arm_2_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+  <limit upper="1.570796" lower="0.0" effort="100" velocity="100"/>
+</joint>
+
+</robot>
