@@ -1,4 +1,4 @@
-# 7dof_description — ROS 2 package
+# 7dof_description: ROS 2 package
 
 URDF/xacro description of the 7-DOF robotic arm used in this project, exported from the
 Fusion 360 CAD assembly for visualization in RViz2 and simulation in Gazebo.
@@ -15,7 +15,7 @@ This package models the same arm covered in:
 
 The firmware and vision pipeline elsewhere in this repo drive the *physical* arm using
 feedback position mapping (see the paper, Section III-D). This package is a separate
-kinematic/visual model of the same geometry — useful for visualizing joint motion, planning,
+kinematic/visual model of the same geometry, useful for visualizing joint motion, planning,
 or simulation, and not yet wired to the live hardware control loop.
 
 ## Contents
@@ -59,7 +59,7 @@ source install/setup.bash
 
 ## Run
 
-**RViz visualization** — spawns a GUI with sliders for every joint so you can pose the arm by hand:
+**RViz visualization**: spawns a GUI with sliders for every joint so you can pose the arm by hand:
 
 ```bash
 ros2 launch 7dof_description display.launch.py
@@ -73,7 +73,7 @@ ros2 launch 7dof_description gazebo.launch.py
 
 ## Preview
 
-![RViz2 — RobotModel + TF](docs/rviz_display.jpg)
+![RViz2: RobotModel and TF](docs/rviz_display.jpg)
 ![RViz2 with joint_state_publisher_gui sliders](docs/rviz_joint_sliders.jpg)
 
 ## Notes
@@ -81,4 +81,4 @@ ros2 launch 7dof_description gazebo.launch.py
 - `display.launch.py` defaults to `joint_state_publisher_gui` (slider window). Pass
   `gui:=false` to instead publish zeroed joint states without the GUI.
 - The xacro is processed at launch time (`xacro.process_file(...)`), so editing
-  `urdf/7dof.xacro` doesn't require a rebuild — just re-launch.
+  `urdf/7dof.xacro` doesn't require a rebuild, just re-launch.

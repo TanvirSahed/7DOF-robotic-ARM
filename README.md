@@ -1,4 +1,4 @@
-# 7-DOF Robotic Arm — Object Classification & Sorting
+# 7-DOF Robotic Arm: Object Classification & Sorting
 
 A 7-DOF robotic arm (MG996R servos, ATmega2560, PCA9685 driver) that detects and sorts
 objects (cups vs. bottles) using MobileNet-SSDV3 for computer vision, controlled through
@@ -14,8 +14,8 @@ Published as:
 - 🎥 Demo video: https://youtube.com/shorts/5LcHwnB7o1Q
 - 🧩 3D design (Fusion 360): https://a360.co/46bxGCI
 
-![Object detection — bottle](bottle.JPG)
-![Object detection — cup](cup.JPG)
+![Object detection: bottle](bottle.JPG)
+![Object detection: cup](cup.JPG)
 
 ## How it works
 
@@ -23,7 +23,7 @@ Published as:
   (COCO-pretrained) to detect and classify cups/bottles in real time.
 - **Feedback position mapping**: an extra feedback wire on each MG996R servo lets the
   microcontroller read its live angle. Target poses are recorded once by hand-positioning the
-  arm, then replayed for pick-and-place — no kinematic equations needed.
+  arm, then replayed for pick-and-place, no kinematic equations needed.
 - A PCA9685 driver regulates 6V/1.5A per channel across the 7 servos. The ATmega2560 receives
   the detected object's class over serial and drives a tuned PD controller (Kp=2.2, Kd=0.7)
   for smooth, low-jitter motion.
@@ -32,13 +32,13 @@ Published as:
 
 | Path | What it is |
 |---|---|
-| `1RoboticArmFinal.ino` | Main Arduino Mega firmware — servo control, serial command handling, PD controller |
+| `1RoboticArmFinal.ino` | Main Arduino Mega firmware: servo control, serial command handling, PD controller |
 | `7DoFarmPositionMapping.ino` | Position-mapping sketch used to record joint angles for each pose |
 | `RobotVision.py`, `RobotVision7Dof.py` | Host-side Python: MobileNet-SSD object detection + serial link to the Arduino |
 | `arduinoCOM.py` | Serial communication helper |
 | `coco.names.txt`, `frozen_inference_graph.pb` | MobileNet-SSD model/labels used for detection |
 | `Object_Detection_Files.zip` | Bundled model config files |
-| `ros2_ws/` | ROS 2 (Humble) URDF/xacro description of the arm, generated from the Fusion 360 CAD model, for RViz2 visualization and Gazebo simulation — see [`ros2_ws/src/7dof_description/README.md`](ros2_ws/src/7dof_description/README.md) |
+| `ros2_ws/` | ROS 2 (Humble) URDF/xacro description of the arm, generated from the Fusion 360 CAD model, for RViz2 visualization and Gazebo simulation. See [`ros2_ws/src/7dof_description/README.md`](ros2_ws/src/7dof_description/README.md) |
 | `bottle.JPG`, `cup.JPG`, `bottle_cup.JPG`, `bottle_arduino.JPG` | Detection sample images |
 
 ## Getting started
@@ -74,4 +74,4 @@ requirements and details.
 
 ## Author
 
-Md Tanvir Rahman Sahed — tanvir.sahed00@gmail.com
+Md Tanvir Rahman Sahed, tanvir.sahed00@gmail.com
